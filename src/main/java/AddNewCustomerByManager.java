@@ -52,8 +52,8 @@ public class AddNewCustomerByManager{
 
         // enter to a bank manager page
         WebElement BankManagerPage = driver.findElement(By.xpath("//*[contains(text(),'Manager')]"));
-         BankManagerPage.sendKeys(Keys.ENTER);
-         Thread.sleep(2000);
+        BankManagerPage.sendKeys(Keys.ENTER);
+        Thread.sleep(2000);
 
         //show all the bank customers
         WebElement ShowCustomers = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[1]/button[3]"));
