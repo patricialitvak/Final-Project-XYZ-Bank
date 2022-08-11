@@ -3,11 +3,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 
-//selenium - deposit cash to a bank account
 public class DepositByCustomer {
     public static void main(String[] args) throws InterruptedException {
 
-        //change path/directory of chrome driver
+        //change directory of chrome driver path
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\patri\\Desktop\\QA\\selenium\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -21,40 +20,40 @@ public class DepositByCustomer {
         Thread.sleep(2000);
 
         //customer login page
-        WebElement UserSelect = driver.findElement(By.id("userSelect"));
-        UserSelect.sendKeys(Keys.ENTER);
+        WebElement userSelect = driver.findElement(By.id("userSelect"));
+        userSelect.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
 
-        //choose account
-        WebElement YourName = driver.findElement(By.name("userSelect"));
-        YourName.sendKeys("Harry Potter");
-        YourName.click();
-        WebElement LoginButton = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/form/button"));
-        LoginButton.click();
+        //choose an account
+        WebElement yourName = driver.findElement(By.name("userSelect"));
+        yourName.sendKeys("Harry Potter");
+        yourName.click();
+        WebElement loginButton = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/form/button"));
+        loginButton.click();
         Thread.sleep(2000);
 
-        //  click deposit button
-        WebElement DepositTab = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[3]/button[2]"));
-        DepositTab.click();
+        //click on deposit tab
+        WebElement depositTab = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[3]/button[2]"));
+        depositTab.click();
 
-        // enter 250 to deposit
-        WebElement Amount = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[4]/div/form/div/input"));
-        Amount.sendKeys("250");
+        //enter 250 to deposit
+        WebElement amount = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[4]/div/form/div/input"));
+        amount.sendKeys("250");
         Thread.sleep(2000);
 
-        //click deposit button
-        WebElement DepositClick = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[4]/div/form/button"));
-        DepositClick.click();
+        //click on deposit button
+        WebElement depositBtn = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[4]/div/form/button"));
+        depositBtn.click();
         Thread.sleep(2000);
 
-        //click on TRANSACTION button to see the change
-        WebElement TransactionBut = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[3]/button[1]"));
-        TransactionBut.click();
+        //click on transaction button to see the change
+        WebElement transactionBut = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div[3]/button[1]"));
+        transactionBut.click();
         Thread.sleep(3000);
 
         // click on logout button
-        WebElement LogOutButton = driver.findElement(By.xpath("/html/body/div/div/div[1]/button[2]"));
-        LogOutButton.click();
+        WebElement logOutButton = driver.findElement(By.xpath("/html/body/div/div/div[1]/button[2]"));
+        logOutButton.click();
         Thread.sleep(1000);
 
         //exit the site
